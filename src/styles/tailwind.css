@@ -20,8 +20,8 @@
     --color-popover-foreground: #1F2937; /* gray-800 */
     
     /* Muted Colors */
-    --color-muted: #F3F4F6; /* gray-100 */
-    --color-muted-foreground: #6B7280; /* gray-500 */
+    --color-muted: #E7E7E9; /* gray-100 */
+    --color-muted-foreground: #2a2c2f; /* gray-500 */
     
     /* Primary Colors */
     --color-primary: #1E40AF; /* blue-700 */
