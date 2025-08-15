@@ -7,7 +7,7 @@ const HyroxRacePace = ({ hyroxPace }) => {
   }
 
   return (
-    <div className="bg-gradient-to-br from-primary to-primary/80 rounded-lg shadow-athletic-lg p-6 text-white">
+    <div className="rounded-lg shadow-athletic-lg p-6 text-white" style={{ background: 'linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%)' }}>
       <div className="flex items-center space-x-3 mb-4">
         <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
           <Icon name="Trophy" size={24} color="white" />
