@@ -2,13 +2,6 @@ import React from 'react';
 import Icon from '../../../components/AppIcon';
 
 const HyroxRacePace = ({ hyroxPace }) => {
-  const formatPace = (paceInMinutes) => {
-    if (!paceInMinutes || isNaN(paceInMinutes)) return '--:--';
-    const minutes = Math.floor(paceInMinutes);
-    const seconds = Math.round((paceInMinutes - minutes) * 60);
-    return `${minutes}:${seconds?.toString()?.padStart(2, '0')}`;
-  };
-
   if (!hyroxPace) {
     return null;
   }
@@ -27,7 +20,7 @@ const HyroxRacePace = ({ hyroxPace }) => {
 
       <div className="text-center py-6">
         <div className="text-5xl font-bold pace-display mb-2">
-          {formatPace(hyroxPace)}
+          {hyroxPace}
         </div>
         <p className="text-white/80 text-lg">per kilometer</p>
       </div>

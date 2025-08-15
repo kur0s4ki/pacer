@@ -2,21 +2,13 @@ import React from 'react';
 import Icon from '../../../components/AppIcon';
 
 const TrainingZones = ({ trainingZones }) => {
-  const formatPace = (paceInMinutes) => {
-    if (!paceInMinutes || isNaN(paceInMinutes)) return '--:--';
-    const minutes = Math.floor(paceInMinutes);
-    const seconds = Math.round((paceInMinutes - minutes) * 60);
-    return `${minutes}:${seconds?.toString()?.padStart(2, '0')}`;
-  };
-
   const getIntensityColor = (zone) => {
     const colors = {
-      'Base/Zone 2': 'bg-green-100 text-green-800 border-green-200',
-      'Aerobic Threshold/VT1': 'bg-blue-100 text-blue-800 border-blue-200',
+      'Base (Zone 2)': 'bg-green-100 text-green-800 border-green-200',
+      'Aerobe Schwelle (VT1)': 'bg-blue-100 text-blue-800 border-blue-200',
       'Sub-Threshold': 'bg-yellow-100 text-yellow-800 border-yellow-200',
-      'Threshold/LT2': 'bg-orange-100 text-orange-800 border-orange-200',
-      'Max Aerobic Power/VO2max': 'bg-red-100 text-red-800 border-red-200',
-      'Speed Repetitions': 'bg-purple-100 text-purple-800 border-purple-200'
+      'Threshold (LT2)': 'bg-orange-100 text-orange-800 border-orange-200',
+      'Max. Aerobic Power (VO2max)': 'bg-red-100 text-red-800 border-red-200'
     };
     return colors?.[zone] || 'bg-gray-100 text-gray-800 border-gray-200';
   };
@@ -49,16 +41,16 @@ const TrainingZones = ({ trainingZones }) => {
             {trainingZones?.map((zone, index) => (
               <tr key={index} className="border-b border-border/50 hover:bg-muted/30 transition-colors">
                 <td className="py-4 px-2">
-                  <div className="font-medium text-foreground text-sm">{zone?.name}</div>
+                  <div className="font-medium text-foreground text-sm">{zone?.label}</div>
                 </td>
                 <td className="py-4 px-2">
-                  <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${getIntensityColor(zone?.name)}`}>
-                    {zone?.name?.split('/')?.[0]}
+                  <span className={`inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border ${getIntensityColor(zone?.label)}`}>
+                    {zone?.label?.split(' (')?.[0]}
                   </span>
                 </td>
                 <td className="py-4 px-2 text-right">
                   <span className="text-lg font-bold pace-display text-foreground">
-                    {formatPace(zone?.pace)}
+                    {zone?.pace}
                   </span>
                 </td>
               </tr>

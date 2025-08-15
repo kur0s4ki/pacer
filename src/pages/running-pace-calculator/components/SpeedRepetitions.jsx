@@ -1,34 +1,8 @@
 import React from 'react';
 import Icon from '../../../components/AppIcon';
 
-const SpeedRepetitions = ({ speedRepetitionPace }) => {
-  const formatPace = (paceInMinutes) => {
-    if (!paceInMinutes || isNaN(paceInMinutes)) return '--:--';
-    const minutes = Math.floor(paceInMinutes);
-    const seconds = Math.round((paceInMinutes - minutes) * 60);
-    return `${minutes}:${seconds?.toString()?.padStart(2, '0')}`;
-  };
-
-  const formatTime = (timeInMinutes) => {
-    if (!timeInMinutes || isNaN(timeInMinutes)) return '--:--';
-    const minutes = Math.floor(timeInMinutes);
-    const seconds = Math.round((timeInMinutes - minutes) * 60);
-    return `${minutes}:${seconds?.toString()?.padStart(2, '0')}`;
-  };
-
-  const calculateIntervalTime = (distance, pacePerKm) => {
-    if (!pacePerKm || isNaN(pacePerKm)) return 0;
-    return (distance / 1000) * pacePerKm;
-  };
-
-  const intervals = [
-    { distance: 200, label: '200m' },
-    { distance: 400, label: '400m' },
-    { distance: 600, label: '600m' },
-    { distance: 800, label: '800m' }
-  ];
-
-  if (!speedRepetitionPace) {
+const SpeedRepetitions = ({ speedRepetitionPace, intervals }) => {
+  if (!speedRepetitionPace || !intervals) {
     return null;
   }
 
@@ -46,27 +20,37 @@ const SpeedRepetitions = ({ speedRepetitionPace }) => {
       <div className="mb-6 p-4 bg-gradient-to-r from-error/10 to-error/5 rounded-lg border border-error/20">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm font-medium text-muted-foreground">Target Pace</p>
-            <p className="text-2xl font-bold text-error pace-display">{formatPace(speedRepetitionPace)}/km</p>
+            <p className="text-sm font-medium text-muted-foreground">Pace</p>
+            <p className="text-2xl font-bold text-error pace-display">{speedRepetitionPace}</p>
           </div>
           <div className="w-12 h-12 bg-error/20 rounded-lg flex items-center justify-center">
             <Icon name="Target" size={24} className="text-error" />
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-        {intervals?.map((interval, index) => {
-          const intervalTime = calculateIntervalTime(interval?.distance, speedRepetitionPace);
-          return (
-            <div key={index} className="bg-muted/50 rounded-lg p-4 text-center border border-border/50">
-              <div className="text-lg font-bold text-foreground mb-1">{interval?.label}</div>
-              <div className="text-2xl font-bold pace-display text-error mb-1">
-                {formatTime(intervalTime)}
-              </div>
-              <div className="text-xs text-muted-foreground">target time</div>
-            </div>
-          );
-        })}
+      <div className="overflow-x-auto">
+        <table className="w-full">
+          <thead>
+            <tr className="border-b border-border">
+              <th className="text-left py-3 px-2 text-sm font-medium text-muted-foreground">Distance</th>
+              <th className="text-right py-3 px-2 text-sm font-medium text-muted-foreground">Duration (mm:ss)</th>
+            </tr>
+          </thead>
+          <tbody>
+            {intervals?.map((interval, index) => (
+              <tr key={index} className="border-b border-border/50 hover:bg-muted/30 transition-colors">
+                <td className="py-4 px-2">
+                  <div className="font-medium text-foreground text-sm">{interval?.distance}</div>
+                </td>
+                <td className="py-4 px-2 text-right">
+                  <span className="text-lg font-bold pace-display text-foreground">
+                    {interval?.duration}
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
       <div className="mt-6 p-3 bg-muted rounded-md">
         <div className="flex items-start space-x-2">
