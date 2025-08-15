@@ -286,22 +286,35 @@ const RunningPaceCalculator = () => {
             {/* Re-calculate Section */}
             <div className="bg-card border border-border shadow-athletic-sm p-6 text-center">
               <h3 className="text-lg font-semibold text-foreground mb-4">Want to Try a Different Distance?</h3>
-              <div className="flex items-center justify-center space-x-4">
+              <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4 mb-4">
                 <input
                   type="number"
                   min="1000"
                   max="6000"
                   value={distance}
                   onChange={handleDistanceChange}
-                  className="px-4 py-2 border border-border bg-input text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary"
+                  className="px-4 py-2 border border-border bg-input text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary w-full sm:w-auto"
                   placeholder="Enter new distance"
                 />
-                <button
-                  onClick={handleCalculate}
-                  className="bg-primary text-primary-foreground px-6 py-2 font-semibold border border-primary hover:bg-gradient-to-r hover:from-primary hover:to-blue-600 hover:shadow-lg transform hover:scale-105 transition-all duration-300"
-                >
-                  Recalculate
-                </button>
+                <div className="flex space-x-3 w-full sm:w-auto">
+                  <button
+                    onClick={handleCalculate}
+                    className="flex-1 sm:flex-none bg-primary text-primary-foreground px-6 py-2 font-semibold border border-primary hover:bg-gradient-to-r hover:from-primary hover:to-blue-600 hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+                  >
+                    Recalculate
+                  </button>
+                  <button
+                    onClick={() => {
+                      setCurrentStep('intro');
+                      setDistance('');
+                      setError('');
+                      setResult(null);
+                    }}
+                    className="flex-1 sm:flex-none bg-secondary text-secondary-foreground px-6 py-2 font-semibold border border-secondary hover:bg-gradient-to-r hover:from-secondary hover:to-slate-600 hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+                  >
+                    Go to Home
+                  </button>
+                </div>
               </div>
               {error && (
                 <p className="mt-2 text-sm text-error">{error}</p>

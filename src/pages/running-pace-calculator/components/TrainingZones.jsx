@@ -18,7 +18,7 @@ const TrainingZones = ({ trainingZones }) => {
   }
 
   return (
-    <div className="bg-card rounded-lg border border-border shadow-athletic-sm p-6">
+    <div className="bg-card rounded-lg border border-border shadow-athletic-sm p-6 flex flex-col h-full">
       <div className="flex items-center space-x-3 mb-6">
         <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
           <Icon name="Activity" size={20} color="white" />
@@ -28,7 +28,7 @@ const TrainingZones = ({ trainingZones }) => {
           <p className="text-sm text-muted-foreground">Personalized pace ranges for training</p>
         </div>
       </div>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto flex-grow">
         <table className="w-full">
           <thead>
             <tr className="border-b border-border">
@@ -58,7 +58,7 @@ const TrainingZones = ({ trainingZones }) => {
           </tbody>
         </table>
       </div>
-      <div className="mt-4 p-3 bg-muted rounded-md">
+      <div className="mt-6 p-3 bg-muted rounded-md">
         <div className="flex items-start space-x-2">
           <Icon name="Lightbulb" size={16} className="text-accent mt-0.5 flex-shrink-0" />
           <p className="text-xs text-muted-foreground">

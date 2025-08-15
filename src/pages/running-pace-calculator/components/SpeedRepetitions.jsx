@@ -7,7 +7,7 @@ const SpeedRepetitions = ({ speedRepetitionPace, intervals }) => {
   }
 
   return (
-    <div className="bg-card rounded-lg border border-border shadow-athletic-sm p-6">
+    <div className="bg-card rounded-lg border border-border shadow-athletic-sm p-6 flex flex-col h-full">
       <div className="flex items-center space-x-3 mb-6">
         <div className="w-10 h-10 bg-error rounded-lg flex items-center justify-center">
           <Icon name="Zap" size={20} color="white" />
@@ -28,7 +28,7 @@ const SpeedRepetitions = ({ speedRepetitionPace, intervals }) => {
           </div>
         </div>
       </div>
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto flex-grow">
         <table className="w-full">
           <thead>
             <tr className="border-b border-border">
