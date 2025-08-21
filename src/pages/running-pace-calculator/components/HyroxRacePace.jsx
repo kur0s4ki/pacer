@@ -7,7 +7,7 @@ const HyroxRacePace = ({ hyroxPace }) => {
   }
 
   return (
-    <div className="rounded-lg shadow-athletic-lg p-6 text-black" style={{ backgroundColor: '#FFED00' }}>
+    <div className="shadow-athletic-lg p-6 text-black" style={{ backgroundColor: '#FFED00', borderRadius: '12px' }}>
       <div className="flex items-center justify-between">
         <div className="flex items-center space-x-3">
           <div className="w-12 h-12 bg-black/20 rounded-lg flex items-center justify-center">

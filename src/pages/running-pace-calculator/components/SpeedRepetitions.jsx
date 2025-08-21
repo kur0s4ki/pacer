@@ -7,7 +7,7 @@ const SpeedRepetitions = ({ speedRepetitionPace, intervals }) => {
   }
 
   return (
-    <div className="bg-card rounded-lg border border-border shadow-athletic-sm p-6 flex flex-col h-full">
+    <div className="bg-card border border-border shadow-athletic-sm p-6 flex flex-col h-full" style={{ borderRadius: '12px' }}>
       <div className="flex items-center space-x-3 mb-6">
         <div className="w-10 h-10 bg-error rounded-lg flex items-center justify-center">
           <Icon name="Zap" size={20} color="white" />
@@ -17,7 +17,7 @@ const SpeedRepetitions = ({ speedRepetitionPace, intervals }) => {
           <p className="text-sm text-muted-foreground">training pace and split times</p>
         </div>
       </div>
-      <div className="mb-6 p-4 bg-gradient-to-r from-error/10 to-error/5 rounded-lg border border-error/20">
+      <div className="mb-6 p-4 bg-gradient-to-r from-error/10 to-error/5 border border-error/20" style={{ borderRadius: '8px' }}>
         <div className="flex items-center justify-between">
           <div>
             <p className="text-sm font-medium text-muted-foreground">Pace</p>

@@ -49,12 +49,12 @@ const RunningPaceCalculator = () => {
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#F3F3F3' }}>
-      <div className="container mx-auto md:px-4 md:py-8 max-w-6xl">
+      <div className="container mx-auto px-0 md:px-4 md:py-8 max-w-6xl">
 
         {/* Input Section */}
         {currentStep === 'input' && (
           <div className="min-h-screen flex items-center justify-center md:py-8">
-            <div className="bg-card border-0 md:border md:border-border shadow-none md:shadow-athletic-lg rounded-lg p-6 md:p-10 max-w-2xl mx-auto min-h-screen md:min-h-0 flex flex-col justify-center md:block">
+            <div className="bg-card border-0 md:border md:border-border shadow-none md:shadow-athletic-lg p-4 md:p-10 w-full md:max-w-2xl mx-auto min-h-screen md:min-h-0 flex flex-col justify-center md:block md:rounded-lg">
               {/* Logo at top */}
               <div className="text-center mb-2">
                 <img
@@ -79,6 +79,7 @@ const RunningPaceCalculator = () => {
                       value={distance}
                       onChange={handleDistanceChange}
                       className="w-full px-4 py-4 border border-border bg-input text-foreground placeholder-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary text-lg [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                      style={{ borderRadius: '8px' }}
                       placeholder="Distance in m (ie: 2500)"
                     />
                   </div>
@@ -88,10 +89,10 @@ const RunningPaceCalculator = () => {
                 </div>
 
                 {/* Tips and Information Section */}
-                <div className="bg-muted/30 border border-border/50 p-6 space-y-4">
+                <div className="bg-muted/30 border border-border/50 p-6 space-y-4" style={{ borderRadius: '12px', minWidth: '300px' }}>
                   <h3 className="text-lg font-semibold text-foreground mb-4">12-Minute Run Test Tips</h3>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-6">
                     <div>
                       <h4 className="font-medium text-foreground mb-2">Before the Test:</h4>
                       <ul className="text-sm text-muted-foreground space-y-1">
@@ -109,12 +110,10 @@ const RunningPaceCalculator = () => {
                       </ul>
                     </div>
 
-
                     <div>
                       <h4 className="font-medium text-foreground mb-2">For Best Results:</h4>
                       <ul className="text-sm text-muted-foreground space-y-1">
                         <li>• Use a GPS watch or track</li>
-   
                       </ul>
                     </div>
                   </div>
@@ -124,6 +123,7 @@ const RunningPaceCalculator = () => {
                   onClick={handleCalculate}
                   disabled={!distance}
                   className="w-full bg-primary text-primary-foreground px-6 py-4 text-lg font-semibold border border-primary hover:bg-gradient-to-r hover:from-primary hover:to-blue-600 hover:shadow-lg transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100 disabled:hover:shadow-none transition-all duration-300"
+                  style={{ borderRadius: '8px' }}
                 >
                   Calculate My Training Paces
                 </button>
@@ -135,7 +135,7 @@ const RunningPaceCalculator = () => {
         {/* Step 3: Loading Section */}
         {currentStep === 'loading' && (
           <div className="min-h-screen flex items-center justify-center">
-            <div className="bg-card border-0 md:border md:border-border shadow-none md:shadow-athletic-lg p-6 md:p-8 max-w-md mx-auto text-center min-h-screen md:min-h-0 flex flex-col justify-center md:block">
+            <div className="bg-card border-0 md:border md:border-border shadow-none md:shadow-athletic-lg p-6 md:p-8 max-w-md mx-auto text-center min-h-screen md:min-h-0 flex flex-col justify-center md:block" style={{ borderRadius: '12px' }}>
               <div className="mb-6">
                 <div className="w-16 h-16 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
                 <h3 className="text-xl font-semibold text-foreground mb-2">Calculating Your Paces</h3>
@@ -170,7 +170,7 @@ const RunningPaceCalculator = () => {
             </div>
 
             {/* Re-calculate Section */}
-            <div className="bg-card border border-border shadow-athletic-sm p-6 text-center">
+            <div className="bg-card border border-border shadow-athletic-sm p-6 text-center" style={{ borderRadius: '12px' }}>
               <h3 className="text-lg font-semibold text-foreground mb-4">Want to Try a Different Distance?</h3>
               <div className="flex flex-col sm:flex-row items-center justify-center space-y-3 sm:space-y-0 sm:space-x-4 mb-4">
                 <input
@@ -180,12 +180,14 @@ const RunningPaceCalculator = () => {
                   value={distance}
                   onChange={handleDistanceChange}
                   className="px-4 py-2 border border-border bg-input text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary w-full sm:w-auto"
+                  style={{ borderRadius: '8px' }}
                   placeholder="Enter new distance"
                 />
                 <div className="flex space-x-3 w-full sm:w-auto">
                   <button
                     onClick={handleCalculate}
                     className="flex-1 sm:flex-none bg-primary text-primary-foreground px-6 py-2 font-semibold border border-primary hover:bg-gradient-to-r hover:from-primary hover:to-blue-600 hover:shadow-lg transform hover:scale-105 transition-all duration-300"
+                    style={{ borderRadius: '8px' }}
                   >
                     Recalculate
                   </button>

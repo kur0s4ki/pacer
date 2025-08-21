@@ -18,7 +18,7 @@ const TrainingZones = ({ trainingZones }) => {
   }
 
   return (
-    <div className="bg-card rounded-lg border border-border shadow-athletic-sm p-6 flex flex-col h-full">
+    <div className="bg-card border border-border shadow-athletic-sm p-6 flex flex-col h-full" style={{ borderRadius: '12px' }}>
       <div className="flex items-center space-x-3 mb-6">
         <div className="w-10 h-10 bg-accent rounded-lg flex items-center justify-center">
           <Icon name="Activity" size={20} color="white" />

@@ -14,7 +14,7 @@ const InputSummary = ({ distance, thresholdPace, selectedBand }) => {
   }
 
   return (
-    <div className="bg-card rounded-lg border border-border shadow-athletic-sm p-6">
+    <div className="bg-card border border-border shadow-athletic-sm p-6" style={{ borderRadius: '12px' }}>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="flex items-center space-x-3">
           <div className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center">
