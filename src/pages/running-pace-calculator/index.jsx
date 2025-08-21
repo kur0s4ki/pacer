@@ -54,7 +54,7 @@ const RunningPaceCalculator = () => {
         {/* Input Section */}
         {currentStep === 'input' && (
           <div className="min-h-screen flex items-center justify-center md:py-8">
-            <div className="bg-card border-0 md:border md:border-border shadow-none md:shadow-athletic-lg p-4 md:p-10 w-full md:max-w-2xl mx-auto min-h-screen md:min-h-0 flex flex-col justify-center md:block md:rounded-lg">
+            <div className="bg-card border-0 md:border md:border-border shadow-none md:shadow-athletic-lg p-4 md:p-10 w-full md:max-w-2xl mx-auto min-h-screen md:min-h-0 flex flex-col justify-center md:block" style={{ borderRadius: '12px' }}>
               {/* Logo at top */}
               <div className="text-center mb-2">
                 <img
