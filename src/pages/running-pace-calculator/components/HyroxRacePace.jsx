@@ -7,30 +7,27 @@ const HyroxRacePace = ({ hyroxPace }) => {
   }
 
   return (
-    <div className="rounded-lg shadow-athletic-lg p-6 text-white" style={{ background: 'linear-gradient(90deg, #00d2ff 0%, #3a47d5 100%)' }}>
-      <div className="flex items-center space-x-3 mb-4">
-        <div className="w-12 h-12 bg-white/20 rounded-lg flex items-center justify-center">
-          <Icon name="Trophy" size={24} color="white" />
+    <div className="rounded-lg shadow-athletic-lg p-6 text-black" style={{ backgroundColor: '#FFED00' }}>
+      <div className="flex items-center justify-between">
+        <div className="flex items-center space-x-3">
+          <div className="w-12 h-12 bg-black/20 rounded-lg flex items-center justify-center">
+            <Icon name="Trophy" size={24} color="black" />
+          </div>
+          <div>
+            <h3 className="text-xl font-bold">HYROX Race Pace</h3>
+            <p className="text-black/80 text-sm">Recommended competition pace for HYROX Single</p>
+          </div>
         </div>
-        <div>
-          <h3 className="text-xl font-bold">HYROX Race Pace</h3>
-          <p className="text-white/80 text-sm">Recommended competition pace</p>
+        
+        <div className="text-right">
+          <div className="text-5xl font-bold pace-display">
+            {hyroxPace}
+          </div>
+          <p className="text-black/80 text-lg">per kilometer</p>
         </div>
       </div>
 
-      <div className="text-center py-6">
-        <div className="text-5xl font-bold pace-display mb-2">
-          {hyroxPace}
-        </div>
-        <p className="text-white/80 text-lg">per kilometer</p>
-      </div>
 
-      <div className="flex items-center justify-center space-x-2 mt-4 p-3 bg-white/10 rounded-md">
-        <Icon name="Zap" size={16} color="white" />
-        <p className="text-sm text-white/90">
-          Average of Threshold and Sub-Threshold paces
-        </p>
-      </div>
     </div>
   );
 };
