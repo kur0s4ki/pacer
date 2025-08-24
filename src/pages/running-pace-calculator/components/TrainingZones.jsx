@@ -38,12 +38,12 @@ const TrainingZones = ({ trainingZones }) => {
           </thead>
           <tbody>
             {trainingZones?.map((zone, index) => (
-              <tr key={index} className="border-b border-border/50 hover:bg-muted/30 transition-colors">
+              <tr key={index} className={`hover:opacity-90 transition-colors ${getIntensityColor(zone?.label)}`}>
                 <td className="py-4 px-2">
-                  <div className="font-bold text-foreground text-sm">{zone?.label}</div>
+                  <div className="font-bold text-sm">{zone?.label}</div>
                 </td>
                 <td className="py-4 px-2 text-right">
-                  <span className="text-lg font-bold pace-display text-foreground">
+                  <span className="text-lg font-bold pace-display">
                     {zone?.pace}
                   </span>
                 </td>
