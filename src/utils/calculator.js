@@ -7,7 +7,7 @@ function secondsToMmSs(totalSeconds) {
   return `${String(mm).padStart(2, "0")}:${String(ss).padStart(2, "0")}`;
 }
 
-function minPerKmToMmSs(minPerKm) {
+export function minPerKmToMmSs(minPerKm) {
   return secondsToMmSs(minPerKm * 60);
 }
 
@@ -56,8 +56,10 @@ const ZONE_MULTIPLIERS = {
 
 const INTERVAL_DISTANCES = [200, 400, 600, 800];
 
-/** Threshold pace (min per km) exactly as in your formula (without /1440) */
+/** Threshold pace (min per km) exactly as in your Excel formula (without /1440) */
 function thresholdMinPerKm(distanceMeters) {
+  // The Excel formula divides by 1440 only to format as a time value
+  // We use min/km directly without this division
   return 71.4478484 * Math.exp(-0.00143607775 * distanceMeters) + 3.36187527;
 }
 
@@ -85,6 +87,8 @@ export function calculatePaces(maxDistanceMeters) {
   const hyrox = (thr + sub) / 2;
 
   // Speed Repetitions pace
+  // For distance 2500m with band "<2600", mult["Speed Repetitions"] is 1.15
+  // If threshold is about 5.33, speedReps = 5.33 / 1.15 = 4.63 (about 4:38)
   const speedReps = threshold / mult["Speed Repetitions"];
 
   // Intervals at Speed Reps pace

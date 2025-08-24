@@ -4,6 +4,7 @@ import HyroxRacePace from './components/HyroxRacePace';
 import TrainingZones from './components/TrainingZones';
 import SpeedRepetitions from './components/SpeedRepetitions';
 import { calculatePaces } from '../../utils/calculator';
+import { minPerKmToMmSs } from '../../utils/calculator';
 
 const RunningPaceCalculator = () => {
   const [currentStep, setCurrentStep] = useState('input'); // 'input', 'loading', 'results'
@@ -164,7 +165,7 @@ const RunningPaceCalculator = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
               <TrainingZones trainingZones={result.zones} />
               <SpeedRepetitions
-                speedRepetitionPace={result.speedReps.pace}
+                speedRepetitionPace={minPerKmToMmSs(result.debug.threshold_min_per_km)}
                 intervals={result.speedReps.intervals}
               />
             </div>

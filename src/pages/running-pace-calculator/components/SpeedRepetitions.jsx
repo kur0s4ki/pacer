@@ -20,7 +20,7 @@ const SpeedRepetitions = ({ speedRepetitionPace, intervals }) => {
       <div className="mb-6 p-4 bg-gradient-to-r from-error/10 to-error/5 border border-error/20" style={{ borderRadius: '8px' }}>
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm font-medium text-muted-foreground">Pace</p>
+            <p className="text-sm font-medium text-muted-foreground">Threshold Pace</p>
             <p className="text-2xl font-bold text-error pace-display">{speedRepetitionPace}</p>
           </div>
           <div className="w-12 h-12 bg-error/20 rounded-lg flex items-center justify-center">
