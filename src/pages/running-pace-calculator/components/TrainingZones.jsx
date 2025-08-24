@@ -32,15 +32,15 @@ const TrainingZones = ({ trainingZones }) => {
         <table className="w-full">
           <thead>
             <tr className="border-b border-border">
-              <th className="text-left py-3 px-2 text-sm font-medium text-muted-foreground">Zone</th>
-              <th className="text-right py-3 px-2 text-sm font-medium text-muted-foreground">Pace (min/km)</th>
+              <th className="text-left py-3 px-2 text-sm font-bold text-muted-foreground">Zone</th>
+              <th className="text-right py-3 px-2 text-sm font-bold text-muted-foreground">Pace (min/km)</th>
             </tr>
           </thead>
           <tbody>
             {trainingZones?.map((zone, index) => (
               <tr key={index} className="border-b border-border/50 hover:bg-muted/30 transition-colors">
                 <td className="py-4 px-2">
-                  <div className="font-medium text-foreground text-sm">{zone?.label}</div>
+                  <div className="font-bold text-foreground text-sm">{zone?.label}</div>
                 </td>
                 <td className="py-4 px-2 text-right">
                   <span className="text-lg font-bold pace-display text-foreground">

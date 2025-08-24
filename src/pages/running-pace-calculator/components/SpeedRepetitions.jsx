@@ -32,15 +32,15 @@ const SpeedRepetitions = ({ speedRepetitionPace, intervals }) => {
         <table className="w-full">
           <thead>
             <tr className="border-b border-border">
-              <th className="text-left py-3 px-2 text-sm font-medium text-muted-foreground">Distance</th>
-              <th className="text-right py-3 px-2 text-sm font-medium text-muted-foreground">Split Times (mm:ss)</th>
+              <th className="text-left py-3 px-2 text-sm font-bold text-muted-foreground">Distance</th>
+              <th className="text-right py-3 px-2 text-sm font-bold text-muted-foreground">Split Times (mm:ss)</th>
             </tr>
           </thead>
           <tbody>
             {intervals?.map((interval, index) => (
               <tr key={index} className="border-b border-border/50 hover:bg-muted/30 transition-colors">
                 <td className="py-4 px-2">
-                  <div className="font-medium text-foreground text-sm">{interval?.distance}</div>
+                  <div className="font-bold text-foreground text-sm">{interval?.distance}</div>
                 </td>
                 <td className="py-4 px-2 text-right">
                   <span className="text-lg font-bold pace-display text-foreground">
