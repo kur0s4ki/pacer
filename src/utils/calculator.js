@@ -63,6 +63,16 @@ function thresholdMinPerKm(distanceMeters) {
   return 71.4478484 * Math.exp(-0.00143607775 * distanceMeters) + 3.36187527;
 }
 
+/** Calculate average pace using the formula: ((12/60)/(distance/1000)) */
+export function calculateAveragePace(distanceMeters) {
+  // 12/60 = 0.2 hours (12 minutes)
+  // distance/1000 = distance in kilometers
+  const hoursPerKm = 0.2 / (distanceMeters / 1000);
+  // Convert to minutes per km
+  const minutesPerKm = hoursPerKm * 60;
+  return minutesPerKm;
+}
+
 /** Core calculation following the workbook exactly */
 export function calculatePaces(maxDistanceMeters) {
   const distance = Number(maxDistanceMeters);

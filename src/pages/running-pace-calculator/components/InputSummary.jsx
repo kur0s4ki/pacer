@@ -27,7 +27,7 @@ const InputSummary = ({ distance, thresholdPace, selectedBand }) => {
         </div>
         
         <div className="space-y-2">
-          <p className="text-sm font-medium text-muted-foreground">Avg. pace</p>
+          <p className="text-sm font-medium text-muted-foreground">Pace</p>
           <p className="text-2xl font-bold text-primary pace-display">{formatPace(thresholdPace)} min/km</p>
         </div>
       </div>

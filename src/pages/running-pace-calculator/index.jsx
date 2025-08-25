@@ -3,8 +3,7 @@ import InputSummary from './components/InputSummary';
 import HyroxRacePace from './components/HyroxRacePace';
 import TrainingZones from './components/TrainingZones';
 import SpeedRepetitions from './components/SpeedRepetitions';
-import { calculatePaces } from '../../utils/calculator';
-import { minPerKmToMmSs } from '../../utils/calculator';
+import { calculatePaces, minPerKmToMmSs, calculateAveragePace } from '../../utils/calculator';
 
 const RunningPaceCalculator = () => {
   const [currentStep, setCurrentStep] = useState('input'); // 'input', 'loading', 'results'
@@ -154,7 +153,7 @@ const RunningPaceCalculator = () => {
             {/* Input Summary */}
             <InputSummary
               distance={distance}
-              thresholdPace={result.debug.threshold_min_per_km}
+              thresholdPace={calculateAveragePace(distance)}
               selectedBand={result.debug.band}
             />
 

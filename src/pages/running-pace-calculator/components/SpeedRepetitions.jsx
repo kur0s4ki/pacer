@@ -14,7 +14,7 @@ const SpeedRepetitions = ({ speedRepetitionPace, intervals }) => {
         </div>
         <div>
           <h3 className="text-lg font-semibold text-foreground">Speed Work</h3>
-          <p className="text-sm text-muted-foreground">training pace and split times</p>
+          <p className="text-sm text-muted-foreground">Training pace and split times</p>
         </div>
       </div>
       <div className="mb-6 p-4 bg-gradient-to-r from-error/10 to-error/5 border border-error/20" style={{ borderRadius: '8px' }}>
